@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/book-club/static/js/main.30e4e4da.js",
+    "static/media/logo.svg": "/book-club/static/media/logo.0f2e0fe70d7f711f7914f507dde8d4d1.svg",
+    "index.html": "/book-club/index.html",
+    "main.30e4e4da.js.map": "/book-club/static/js/main.30e4e4da.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.30e4e4da.js"
+  ]
+}
