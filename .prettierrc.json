@@ -1,0 +1,19 @@
+{
+  "printWidth": 100,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "bracketSpacing": false,
+  "semi": false,
+  "overrides": [
+    {
+      "files": "*.jsx",
+      "options": {
+        "semi": false
+      }
+    },
+    {
+      "files": ".prettierrc",
+      "options": {"parser": "json"}
+    }
+  ]
+}
