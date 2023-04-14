@@ -5,8 +5,7 @@ import {GlobalStyle} from './styles'
 
 const App = () => {
   const [books, setBooks] = useState([])
-
-  // console.log('this is gong to load every time the component renders.')
+  const [selectedBook, setSelectedBook] = useState(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,12 +26,16 @@ const App = () => {
     fetchData()
   }, [])
 
-  // console.log(`the books array in our state`, books)
+  const pickBook = (book) => {
+    setSelectedBook(book)
+  }
+
+  console.log(selectedBook)
   return (
     <>
       <GlobalStyle />
       <Header />
-      <BooksContainer books={books} />
+      <BooksContainer books={books} picBook={pickBook} />
     </>
   )
 }
