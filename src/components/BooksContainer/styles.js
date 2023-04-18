@@ -3,9 +3,10 @@ import styled from 'styled-components'
 export const Container = styled.div`
   background-color: #a7e1f8;
   padding: 160px 40px;
-  overflow: scroll;
+  overflow: ${({$isPanelOpen}) => ($isPanelOpen ? 'hidden' : 'scroll')};
+  position: ${({$isPanelOpen}) => ($isPanelOpen ? 'fixed' : 'scroll')};
 
-  @media (max-wdith: 800px) {
+  @media (max-width: 800px) {
     padding: 114px 20px;
   }
 `
