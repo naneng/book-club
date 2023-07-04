@@ -34,7 +34,7 @@ const App = () => {
   }
 
   const closePanel = () => {
-    setSelectedBook(false)
+    setShowPanel(true)
   }
 
   console.log(selectedBook)
