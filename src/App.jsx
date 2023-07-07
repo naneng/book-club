@@ -11,19 +11,15 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://book-club-json.herokuapp.com/books')
-      const books = await response.json()
-      setBooks(books)
-
-      // try {
-      //   const response = await fetch('https://book-club-json.herokuapp.com/books')
-      //   console.log(`here's what our fetch request returns`, response)
-      //   const books = await response.json()
-      //   console.log(`our json-ified response:`, books)
-      //   setBooks(books)
-      // } catch (errors) {
-      //   console.log(errors)
-      // }
+      try {
+        const response = await fetch('https://book-club-json.herokuapp.com/books')
+        console.log(`here's what our fetch request returns`, response)
+        const books = await response.json()
+        console.log(`our json-ified response:`, books)
+        setBooks(books)
+      } catch (errors) {
+        console.log(errors)
+      }
     }
     fetchData()
   }, [])
