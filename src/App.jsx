@@ -10,6 +10,7 @@ const App = () => {
   const [books, setBooks] = useState([])
   const [selectedBook, setSelectedBook] = useState(null)
   const [showPanel, setShowPanel] = useState(false)
+  const [filteredBooks, setFilteredBooks] = useState([])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,6 +20,7 @@ const App = () => {
         const books = await response.json()
         console.log(`our json-ified response:`, books)
         setBooks(books)
+        setFilteredBooks(books)
       } catch (errors) {
         console.log(errors)
       }
@@ -35,14 +37,35 @@ const App = () => {
     setShowPanel(false)
   }
 
-  // console.log(selectedBook)
+  const filterBooks = (searchTerm) => {
+    const stringSearch = (bookAttribute, searchTerm) => 
+      bookAttribute.toLowerCase().includes(searchTerm.toLowerCase())
+      
+    if (!searchTerm) {
+      setFilteredBooks(books)
+    } else {
+      setFilteredBooks(
+        books.filter(
+          (book) => stringSearch(book.title, searchTerm) || stringSearch(book.author, searchTerm)
+      )
+      
+      )
+    }
+  }
+
+  const hasFiltered = filteredBooks.length !==books.length
   return (
     <>
       <GlobalStyle />
       <Header>
-        <Search />
+        <Search filterBooks={filterBooks} />
       </Header>
-      <BooksContainer books={books} pickBook={pickBook} isPanelOpen={showPanel} />
+      <BooksContainer
+        books={filteredBooks}
+        pickBook={pickBook}
+        isPanelOpen={showPanel}
+        title={hasFiltered ? 'Search results' : 'All books'}
+      />
       <Transition in={showPanel} timeout={300}>
         {(state) => <DetailPanel book={selectedBook} closePanel={closePanel} state={state} />}
       </Transition>
