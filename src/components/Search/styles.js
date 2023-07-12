@@ -36,7 +36,7 @@ export const Wrapper = styled.div`
     @media (max-width: 800px) {
         background: #ffbccc;
         border-top: 2px solid #000;
-        display: flex
+        display: flex;
         align-items: center;
         justify-content: center;
         height: 64px;
