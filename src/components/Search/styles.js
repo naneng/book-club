@@ -42,7 +42,7 @@ export const Wrapper = styled.div`
         height: 64px;
         width: 100vw;
         left: 0;
-        bottom: 0;
+        bottom: 20px;
         position:fixed;
         z-index: 1;
     }

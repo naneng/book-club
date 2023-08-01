@@ -3,7 +3,7 @@ import BooksContainer from './components/BooksContainer'
 import Header from './components/Header'
 import DetailPanel from './components/DetailPanel'
 import Search from './components/Search'
-import { GlobalStyle } from './styles'
+import  { GlobalStyle, Copyright } from './styles'
 import {Transition} from 'react-transition-group'
 
 const App = () => {
@@ -54,6 +54,11 @@ const App = () => {
   }
 
   const hasFiltered = filteredBooks.length !==books.length
+
+  // function Copyright() {
+  //   return <p className="copyright">Copyrights 2023 Katrina Ariola. All rights reserved.</p>
+  // }
+
   return (
     <>
       <GlobalStyle />
@@ -69,6 +74,7 @@ const App = () => {
       <Transition in={showPanel} timeout={300}>
         {(state) => <DetailPanel book={selectedBook} closePanel={closePanel} state={state} />}
       </Transition>
+      <Copyright>Copyrights 2023 Katrina Ariola. All rights reserved.</Copyright>
     </>
   )
 }

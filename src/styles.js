@@ -50,3 +50,22 @@ export const Close = styled.button`
     transform: rotate(-45deg);
   }
 `
+
+
+export const Copyright = styled.p`
+  color: #000;
+  background: #a7e1f8;
+  font-size: 10px;
+  text-align: center;
+  margin: 0px;
+  padding: 10px;
+
+  @media (max-width: 800px) {
+    background: rgb(255, 188, 204);
+    position: fixed;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+  }
+`
