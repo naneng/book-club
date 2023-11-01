@@ -57,6 +57,40 @@ export const Close = styled.button`
   &::after {
     transform: rotate(-45deg);
   }
+
+  @media (max-width: 535px) {
+    width: 24px;
+    position: relative;
+
+    &::before,
+    &::after {
+      background-color: #000;
+      content: '';
+      height: 16px;
+      width: 2px;
+      position: absolute;
+      top: 5px;
+      left: 9px;
+      margin-right: 10px;
+    }
+  }
+
+  @media (max-width: 510px) {
+    width: 40px;
+    position: relative;
+
+    &::before,
+    &::after {
+      background-color: #000;
+      content: '';
+      height: 8px;
+      width: 2px;
+      position: absolute;
+      top: 7px;
+      left: -2px;
+      margin-right: 10px;
+    }
+  }
 `
 
 
@@ -68,13 +102,16 @@ export const Copyright = styled.p`
   margin: 0px;
   padding: 10px;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     background: rgb(255, 188, 204);
     position: fixed;
-    bottom: 0%;
+    bottom: 0px;
     left: 50%;
     transform: translate(-50%);
     width: 100%;
+    z-index: 4;
+    padding: 1px;
+    font-size: 8px;
   }
 `
 
