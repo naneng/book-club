@@ -1,9 +1,9 @@
 import React, {useEffect, useRef} from 'react'
-import { Panel, P, Em, CloseWrapper, BG } from './styles'
+import { Panel, P, Em, CloseWrapper, BG, Button } from './styles'
 import {Close} from '../../styles'
 import Book from '../Book'
 
-const DetailPanel = ({ book, closePanel, state }) => {
+const DetailPanel = ({ book, closePanel, state, toggleFave }) => {
   const panelEl = useRef(null)
   const prevBook = useRef(null)
 
@@ -13,7 +13,8 @@ const DetailPanel = ({ book, closePanel, state }) => {
     }
     prevBook.current = book
   }, [book, prevBook])
-  console.log(state)
+  //console.log(state)
+
   return (
     <>
       <BG onClick={closePanel} $state={state} />
@@ -23,6 +24,9 @@ const DetailPanel = ({ book, closePanel, state }) => {
         </CloseWrapper>
         {book && (
           <>
+            <Button onClick={() => toggleFave(book.id)} $hasEmoji={true}>
+              {book.isFaved ? '💔 Unfave book' : '❤️  Fave book'}
+            </Button>
             <Book book={book} isLarge={true} />
             <P>{book.description}</P>
             <P>

@@ -1,7 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react'
 import {debounce} from 'lodash-es'
-import {Container, H2, BookList} from './styles'
 import Book from '../Book'
+import {Container, H2, BookList, NoBooksContainer, H3, H4, SadFace} from './styles'
+
+export const NoBooksMessage = () => (
+  <NoBooksContainer>
+    <H3>Oh Dear!</H3>
+    <SadFace />
+    <H4>There are no books to see here!</H4>
+  </NoBooksContainer>
+)
 
 const BooksContainer = ({ books, pickBook, isPanelOpen, title }) => {
   const [scroll, setScroll] = useState(0)
@@ -31,11 +39,15 @@ const BooksContainer = ({ books, pickBook, isPanelOpen, title }) => {
   return (
     <Container $isPanelOpen={isPanelOpen} $top={scroll}>
       <H2>{title}</H2>
+      {books.length > 0 ? (
       <BookList>
         {books.map((book) => (
           <Book key={book.id} book={book} pickBook={pickBook} />
         ))}
       </BookList>
+       ) : (
+         <NoBooksMessage />
+       )}
     </Container>
   )
 }

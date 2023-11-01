@@ -3,6 +3,7 @@ import styled, {createGlobalStyle} from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
 body {
     font-family: 'Work Sans', sans-serif;
+    background-color: #a7e1f8;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -67,5 +68,24 @@ export const Copyright = styled.p`
     left: 50%;
     transform: translate(-50%);
     width: 100%;
+  }
+`
+
+export const Button = styled.button`
+  display: block;
+  border-radius: 30px;
+  padding: ${({$hasEmoji}) => ($hasEmoji ? '4px 12px' : '8px')};
+  border: 2px solid #000;
+  background: transparent;
+  //font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: ${({$isHeader}) => ($isHeader ? '0' : '14px')};
+  cursor: pointer;
+  width: ${({$isHeader}) => ($isHeader ? '140px' : 'unset')};
+
+  @media (max-width: 1000px) {
+    font-size: 12px;
+    width: ${({$isHeader}) => ($isHeader ? '110px' : 'unset')};
   }
 `

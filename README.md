@@ -1,70 +1,54 @@
+Book Club App
+
+# Libraries Used:
+
+react-transition-group
+- used for creating transitions and animations in React components.
+
+
+# State Variables
+
+The App component uses several state variables defined using the useState hook:
+
+- books represents the list of all books in the book club.
+- selectedBook represents the currently selected book.
+- showPanel is a boolean variable that determines whether the detail panel is visible or not.
+filteredBooks represents the list of books that match the search term entered by the user.
+
+The books state variable and the filteredBooks state variable are updated with the fetched data using the setBooks and setFilteredBooks functions, respectively.
+
+# Helper Functions
+
+The pickBook function is called when a user selects a book. It updates the selectedBook state variable with the selected book and sets the showPanel state variable to true, which opens the detail panel.
+
+The closePanel function is called when the user closes the detail panel. It sets the showPanel state variable to false, which hides the detail panel.
+
+The filterBooks function is called when the user enters a search term. It filters the books array based on the search term and updates the filteredBooks state variable accordingly. If the search term is empty, all books are considered a match.
+
+
+# Rendering Components
+
+The App component returns JSX elements that represent the different parts of the book club application. Here's a breakdown of the JSX elements being rendered:
+
+<GlobalStyle /> renders the global styles for the application.
+<Header> renders the header component, which includes a search bar for filtering books.
+<BooksContainer> renders the books container component, which displays the list of books. It receives the books and filteredBooks state variables, the pickBook function, and the isPanelOpen boolean as props.
+<Transition> wraps the <DetailPanel> component and provides a transition effect when the detail panel is shown or hidden. It receives the showPanel state variable as the in prop and a timeout value of 300 milliseconds.
+<DetailPanel> renders the detail panel component, which displays information about the selected book. It receives the selectedBook, closePanel, and state props.
+<Copyright> renders the copyright notice.
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
