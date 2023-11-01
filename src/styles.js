@@ -1,6 +1,13 @@
 import styled, {createGlobalStyle} from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+
+*{
+	margin: 0;
+	padding: 0;
+  font-family: 'Work Sans', sans-serif;
+}
+
 body {
     font-family: 'Work Sans', sans-serif;
     background-color: #a7e1f8;

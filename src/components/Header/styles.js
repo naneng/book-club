@@ -22,9 +22,9 @@ export const HeaderContainer = styled.header`
   width: 100vw;
   display: flex;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     padding: 20px;
   }
 `

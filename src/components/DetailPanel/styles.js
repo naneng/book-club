@@ -18,7 +18,7 @@ transition: 300ms;
 export const Panel = styled.article`
   background-color: #ffe581;
   border-left: 2px solid #000;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 82px);
   width: 660px;
   position: fixed;
   z-index: 2;
@@ -31,12 +31,16 @@ export const Panel = styled.article`
 
   @media (max-width: 1000px) {
     border-left: none;
-    padding: 40px 86px 20px 20px;
+    padding: 40px 86px 20px 30px;
     width: 100vw;
-    height: calc(100vh-70px);
+    height: calc(100vh - 75px);
     bottom: ${({$state}) => ($state === 'entering' || $state === 'entered' ? 0 : '-100vh')};
-    right: unset;
+    /* right: unset; */
     z-index: 3;
+  }
+
+  @media (max-width: 800px) {
+    /* height: calc(100vh-74px); */
   }
 `
 export const CloseWrapper = styled(Pill)`
